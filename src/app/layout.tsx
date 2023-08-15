@@ -1,9 +1,8 @@
-import "./globals.css";
+import "../scss/globals.scss";
+import "../scss/theme.scss";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +13,11 @@ export default function RootLayout({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className={"dark"}
+    >
+      <body className={"text-base"}>{children}</body>
     </html>
   );
 }
