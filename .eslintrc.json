@@ -129,6 +129,16 @@
         "logical": "parens-new-line",
         "prop": "parens-new-line"
       }
-    ]
+    ],
+    "react/jsx-sort-props": ["error", {
+      "callbacksLast": true,
+      "shorthandFirst": false,
+      "shorthandLast": true,
+      "multiline": "last",
+      "ignoreCase": true,
+      "noSortAlphabetically": false,
+      "reservedFirst": false,
+      "locale": "auto"
+    }]
   }
 }

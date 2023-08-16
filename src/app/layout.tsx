@@ -3,6 +3,7 @@ import "../scss/theme.scss";
 import type { Metadata } from "next";
 
 import React from "react";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +16,12 @@ export default function RootLayout({ children }: {
   return (
     <html
       lang="en"
-      className={"dark"}
     >
-      <body className={"text-base"}>{children}</body>
+      <body className={"text-base"}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
