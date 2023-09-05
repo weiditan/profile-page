@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ListSkill = ({
   title,
   dataListSkill,
-}: { title: string, dataListSkill: Array<object> }) => {
+}: { title: string, dataListSkill: Array<{ label: string, iconPath: string, iconPathDark?: string }> }) => {
   const [
     mounted,
     setMounted,
@@ -36,15 +36,15 @@ const ListSkill = ({
                 <div className="relative h-12 w-12">
                   {
                     mounted
-                      && (
-                        <Image
-                          alt={data.label}
-                          className="object-contain"
-                          sizes="(max-width: 100px) 100vw"
-                          src={theme === "dark" && data.iconPathDark ? data.iconPathDark : data.iconPath}
-                          fill
-                        />
-                      )
+                    && (
+                      <Image
+                        alt={data.label}
+                        className="object-contain"
+                        sizes="(max-width: 100px) 100vw"
+                        src={theme === "dark" && data.iconPathDark ? data.iconPathDark : data.iconPath}
+                        fill
+                      />
+                    )
                   }
                 </div>
 

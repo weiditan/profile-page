@@ -16,7 +16,9 @@ const NavHeader = () => {
 
     if (targetId) {
       const element = document.getElementById(targetId);
-      topPosition = element?.offsetTop - topOffset;
+      if(element){
+        topPosition = element.offsetTop - topOffset;
+      }
     }
 
     window.scrollTo({
