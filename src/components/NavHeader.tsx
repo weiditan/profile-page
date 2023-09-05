@@ -73,7 +73,7 @@ const NavHeader = () => {
             >
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PROFILE</span>
             </button>
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-8 items-center">
               <div
                 className="hidden md:block"
                 id="navbar-default"

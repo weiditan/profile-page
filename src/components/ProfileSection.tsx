@@ -17,7 +17,7 @@ const ProfileSection = ({
         </h1>
         <hr className="grow border-black dark:border-white" />
       </div>
-      <div className="p-4">
+      <div className="px-4 py-10">
         {children}
       </div>
     </div>

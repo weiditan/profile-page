@@ -19,18 +19,18 @@ const ListSkill = ({
   }, []);
 
   return (
-    <div className={"flex items-center my-6"}>
+    <div className={"flex items-center"}>
       <div className={"min-w-[120px] text-center"}>
         <h4>
           {title}
         </h4>
       </div>
-      <div className="flex flex-wrap gap-4 border-l-2 border-black dark:border-white">
+      <div className="flex flex-wrap gap-3 border-l-2 border-black dark:border-white">
         {
           dataListSkill.map((data, index) => {
             return (
               <div
-                className="flex flex-col items-center w-24"
+                className="flex flex-col items-center w-20"
                 key={index}
               >
                 <div className="relative h-12 w-12">
@@ -48,9 +48,9 @@ const ListSkill = ({
                   }
                 </div>
 
-                <h5 className="mt-1 text-center">
+                <h6 className="mt-1 text-center">
                   {data.label}
-                </h5>
+                </h6>
               </div>
             );
           })

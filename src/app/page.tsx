@@ -1,6 +1,6 @@
 import Image from "next/image";
 import moment from "moment";
-import { FaBirthdayCake, FaGithub, FaLinkedinIn, FaRegEnvelope, FaRegMap } from "react-icons/fa";
+import { FaBirthdayCake, FaGithub, FaLinkedinIn, FaPhoneAlt, FaRegEnvelope, FaRegMap } from "react-icons/fa";
 import Link from "next/link";
 import ListSkill from "@/components/ListSkill";
 import ProfileSection from "@/components/ProfileSection";
@@ -243,7 +243,7 @@ const Profile = () => {
       ],
       other_list: [
         {
-          label: "Network",
+          label: "Networking",
           iconPath: "/assets/images/skills/others/network.png",
         },
         {
@@ -316,6 +316,22 @@ const Profile = () => {
             </div>
             <div className="flex items-center">
               <div className="w-12">
+                <FaPhoneAlt
+                  className={"mx-auto"}
+                  size={20}
+                />
+              </div>
+              <div className="grow">
+                <Link
+                  href={`tel:+${data.mobile_country_code + data.mobile_number}`}
+                  target="_blank"
+                >
+                  {data.mobile_country_code + data.mobile_number}
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="w-12">
                 <FaRegEnvelope
                   className={"mx-auto"}
                   size={20}
@@ -371,7 +387,7 @@ const Profile = () => {
         id="experience"
         title={"EXPERIENCE"}
       >
-        <div className="flex flex-col gap-6 py-6">
+        <div className="flex flex-col gap-6">
           {
             data.experience_list.map((experience, index) => {
               return (
@@ -446,7 +462,7 @@ const Profile = () => {
         id="education"
         title={"EDUCATION"}
       >
-        <div className="flex flex-col gap-6 py-6">
+        <div className="flex flex-col gap-6">
           {
             data.education_list.map((education, index) => {
               return (
@@ -484,25 +500,28 @@ const Profile = () => {
         id="skill"
         title={"SKILL"}
       >
-        <ListSkill
-          dataListSkill={data.skill.programing_language_list}
-          title={"Languages"} />
+        <div className="flex flex-col gap-6">
+          <ListSkill
+            dataListSkill={data.skill.programing_language_list}
+            title={"Languages"} />
 
-        <ListSkill
-          dataListSkill={data.skill.framework_list}
-          title={"Framework"} />
+          <ListSkill
+            dataListSkill={data.skill.framework_list}
+            title={"Framework"} />
 
-        <ListSkill
-          dataListSkill={data.skill.api_list}
-          title={"Api"} />
+          <ListSkill
+            dataListSkill={data.skill.api_list}
+            title={"Api"} />
 
-        <ListSkill
-          dataListSkill={data.skill.protocol_list}
-          title={"Protocol"} />
+          <ListSkill
+            dataListSkill={data.skill.protocol_list}
+            title={"Protocol"} />
 
-        <ListSkill
-          dataListSkill={data.skill.other_list}
-          title={"Other"} />
+          <ListSkill
+            dataListSkill={data.skill.other_list}
+            title={"Other"} />
+        </div>
+
       </ProfileSection>
 
     </div>
